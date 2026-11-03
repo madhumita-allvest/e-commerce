@@ -1,10 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
-const productRoutes = require("./routes/productRoutes");
 
 // Load environment variables
 dotenv.config();
+
+const db = require("./config/db");
+const productRoutes = require("./routes/productRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 // Create an Express application
 const app = express();
@@ -20,6 +23,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use("/api/products", productRoutes);
+app.use("/api/auth", authRoutes);
 
 // First test route
 app.get("/", (req, res) => {
