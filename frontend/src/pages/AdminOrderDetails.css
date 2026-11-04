@@ -1,0 +1,262 @@
+
+/* ================================
+   ADMIN ORDER DETAILS PAGE
+================================ */
+
+.admin-order-details {
+  max-width: 1150px;
+  margin: 35px auto;
+  padding: 0 25px 40px;
+  color: #1f2937;
+}
+
+/* Back Button */
+
+.back-to-orders {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 22px;
+  padding: 9px 15px;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.back-to-orders:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Main Heading */
+
+.admin-order-details > h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 25px;
+}
+
+/* Information Cards */
+
+.admin-order-info,
+.admin-order-items,
+.admin-status-control {
+  margin-top: 25px;
+  padding: 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Section Headings */
+
+.admin-order-info h2,
+.admin-order-items h2,
+.admin-status-control h2 {
+  margin: 0 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Customer and Delivery Information */
+
+.admin-order-info p {
+  margin: 15px 0;
+  line-height: 1.7;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.admin-order-info p strong {
+  display: inline-block;
+  min-width: 145px;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Products Table */
+
+.admin-order-items-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.admin-order-items table {
+  width: 100%;
+  min-width: 550px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.admin-order-items th {
+  padding: 15px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-order-items td {
+  padding: 15px;
+  color: #374151;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-order-items tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-order-items tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Status Management */
+
+.admin-status-control > p {
+  padding: 14px 16px;
+  margin: 0;
+  border-radius: 7px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.admin-status-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.admin-status-form select {
+  min-width: 200px;
+  padding: 11px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.admin-status-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.admin-status-form button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.admin-status-form button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.admin-status-form button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Success and Error Messages */
+
+.admin-detail-success,
+.admin-detail-error {
+  padding: 13px 16px;
+  margin: 0 0 18px;
+  border-radius: 7px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.admin-detail-success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.admin-detail-error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .admin-order-details {
+    margin: 25px auto;
+    padding: 0 15px 30px;
+  }
+
+  .admin-order-details > h1 {
+    font-size: 25px;
+  }
+
+  .admin-order-info,
+  .admin-order-items,
+  .admin-status-control {
+    padding: 18px;
+  }
+
+  .admin-order-info h2,
+  .admin-order-items h2,
+  .admin-status-control h2 {
+    font-size: 18px;
+  }
+
+  .admin-order-info p strong {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-order-details > h1 {
+    font-size: 23px;
+  }
+
+  .admin-order-info,
+  .admin-order-items,
+  .admin-status-control {
+    padding: 15px;
+  }
+
+  .admin-order-info p {
+    font-size: 13px;
+  }
+
+  .admin-order-info p strong {
+    display: block;
+    min-width: auto;
+    margin-bottom: 3px;
+  }
+
+  .admin-status-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-status-form select,
+  .admin-status-form button {
+    width: 100%;
+  }
+}

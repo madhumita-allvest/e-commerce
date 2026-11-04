@@ -1,13 +1,15 @@
 
 .navbar {
+  position: relative;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
+  padding: 16px clamp(16px, 4vw, 40px);
   background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  gap: 20px;
+  gap: 16px;
 }
 
 .navbar-logo {
@@ -21,7 +23,33 @@
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: clamp(12px, 2vw, 24px);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 20px;
+}
+
+.navbar-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.navbar-menu-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: #374151;
 }
 
 .navbar-links a,
@@ -55,16 +83,62 @@
   font-size: 12px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1100px) {
   .navbar {
     flex-wrap: wrap;
-    padding: 14px 18px;
+    padding: 10px 16px;
+  }
+
+  .navbar-menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 8px 0 4px;
+  }
+
+  .navbar-menu-open .navbar-menu {
+    display: flex;
   }
 
   .navbar-links,
   .navbar-actions {
-    gap: 14px;
-    flex-wrap: wrap;
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .navbar-links a,
+  .navbar-actions a,
+  .navbar-actions .navbar-user,
+  .navbar-actions .logout-btn {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    padding: 9px 10px;
+  }
+
+  .navbar-actions .navbar-user {
+    overflow-wrap: anywhere;
+  }
+
+  .navbar-actions .register-btn {
+    justify-content: center;
+  }
+
+  .navbar-actions .logout-btn {
+    justify-content: center;
+  }
+
+  .navbar-actions .cart-link {
+    gap: 6px;
   }
 }
 

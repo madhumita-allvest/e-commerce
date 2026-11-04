@@ -5,7 +5,7 @@
 
 /* Welcome banner */
 .hero-section {
-  min-height: 380px;
+  min-height: clamp(300px, 45vw, 440px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
 }
 
 .hero-content {
-  max-width: 650px;
+  width: min(100%, 650px);
 }
 
 .hero-content h1 {
@@ -82,7 +82,7 @@
 
 /* Featured products section */
 .featured-section {
-  padding: 45px 40px 60px;
+  padding: 45px clamp(18px, 4vw, 40px) 60px;
   text-align: center;
   background-color: #f9fafb;
 }
@@ -137,4 +137,3 @@
     grid-template-columns: 1fr;
   }
 }
-

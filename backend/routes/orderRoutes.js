@@ -230,6 +230,66 @@ router.get(
   }
 );
 
+// GET /api/orders/admin/:id/details - Get any order's details (Admin only)
+router.get(
+  "/admin/:id/details",
+  verifyToken,
+  adminMiddleware,
+  async (req, res) => {
+    const orderId = Number(req.params.id);
+
+    if (!Number.isInteger(orderId) || orderId <= 0) {
+      return res.status(400).json({
+        message: "Invalid order ID",
+      });
+    }
+
+    try {
+      const orderResult = await db.query(
+        `SELECT
+            o.*,
+            u.name AS customer_name,
+            u.email AS customer_email
+         FROM orders o
+         JOIN users u ON o.user_id = u.id
+         WHERE o.id = $1`,
+        [orderId]
+      );
+
+      if (orderResult.rows.length === 0) {
+        return res.status(404).json({
+          message: "Order not found",
+        });
+      }
+
+      const itemsResult = await db.query(
+        `SELECT
+            product_name,
+            unit_price,
+            quantity,
+            subtotal
+         FROM order_items
+         WHERE order_id = $1`,
+        [orderId]
+      );
+
+      return res.status(200).json({
+        message: "Admin order details fetched successfully",
+        order: {
+          ...orderResult.rows[0],
+          items: itemsResult.rows,
+        },
+      });
+    } catch (err) {
+      console.error("Admin fetch order details error:", err.message);
+
+      return res.status(500).json({
+        message: "Failed to fetch order details",
+      });
+    }
+  }
+);
+
 // GET /api/orders/:id - Get details of one customer's order
 router.get("/:id", verifyToken, async (req, res) => {
   const orderId = Number(req.params.id);

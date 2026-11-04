@@ -1,7 +1,8 @@
 .checkout-page {
-  max-width: 1100px;
+  width: min(100%, 1100px);
+  box-sizing: border-box;
   margin: 40px auto;
-  padding: 20px;
+  padding: 20px clamp(16px, 3vw, 20px);
 }
 
 .checkout-page h1 {
@@ -17,8 +18,9 @@
 
 .checkout-form,
 .checkout-summary {
+  min-width: 0;
   background: #fff;
-  padding: 25px;
+  padding: clamp(18px, 3vw, 25px);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
@@ -80,8 +82,13 @@
 .checkout-summary-item {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 15px;
   margin: 15px 0;
+}
+
+.checkout-summary-item span {
+  overflow-wrap: anywhere;
 }
 
 .checkout-summary h3 {
@@ -96,5 +103,16 @@
 @media (max-width: 750px) {
   .checkout-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .checkout-page {
+    margin: 24px auto;
+  }
+
+  .checkout-summary-item {
+    gap: 8px;
+    font-size: 14px;
   }
 }
