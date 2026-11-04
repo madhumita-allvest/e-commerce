@@ -1,0 +1,140 @@
+
+.home-page {
+  width: 100%;
+}
+
+/* Welcome banner */
+.hero-section {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  color: #1e3a8a;
+  margin-bottom: 18px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 28px;
+}
+
+.shop-now-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.shop-now-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Introduction section */
+.home-intro {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.home-intro h2 {
+  font-size: 28px;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.home-intro p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+/* Featured products section */
+.featured-section {
+  padding: 45px 40px 60px;
+  text-align: center;
+  background-color: #f9fafb;
+}
+
+.featured-section h2 {
+  font-size: 28px;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.featured-description {
+  color: #6b7280;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.featured-section .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto 30px;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background-color: #1d4ed8;
+}
+
+@media (max-width: 800px) {
+  .featured-section .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .featured-section {
+    padding: 35px 18px 45px;
+  }
+
+  .featured-section .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,111 @@
+
+.register-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f3f4f6;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 35px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.register-container h1 {
+  text-align: center;
+  color: #1f2937;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.register-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-container label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 7px;
+}
+
+.register-container input {
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.register-container input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.register-container button {
+  padding: 13px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.register-container button:hover {
+  background-color: #1d4ed8;
+}
+
+.register-error {
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 22px;
+  color: #6b7280;
+}
+
+.login-prompt a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .register-container {
+    padding: 25px 20px;
+  }
+}
+
+.register-success {
+  color: #15803d;
+  background-color: #dcfce7;
+  border: 1px solid #86efac;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+

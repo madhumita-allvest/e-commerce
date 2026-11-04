@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const verifyToken = require("../middleware/authmiddleware");
+const adminMiddleware = require("../middleware/adminMiddleware");
 
 const db = require("../config/db");
 
@@ -144,6 +145,13 @@ router.get("/profile", verifyToken, async (req, res) => {
       message: "Failed to fetch profile"
     });
   }
+});
+// ADMIN TEST ROUTE
+router.get("/admin-test", verifyToken, adminMiddleware, (req, res) => {
+  res.status(200).json({
+    message: "Welcome Admin! You have access.",
+    user: req.user
+  });
 });
 
 module.exports = router;
